@@ -1,12 +1,13 @@
 package Tests;
 
 import Pages.PageFactory;
+import org.testng.annotations.Test;
 
 public class LoginTest extends Baseclass{
 
-    public static void main(String[] args) throws InterruptedException
+    @Test
+    public void setup()
     {
-        setupDriver();
         pageFactory.GetLoginPage().loginpageuser();
     }
 }
