@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Nop Commerce">
+    <listeners>
+        <listener class-name="Reports.Listener"/>
+    </listeners>
     <test name="Verify user is logged in">
         <parameter name="browserName" value="chrome"></parameter>
         <classes>
             <class name="Tests.LoginTest"/>
+        </classes>
+    </test>
+    <test name="Verify user is able to checkout">
+        <parameter name="browserName" value="chrome"></parameter>
+        <classes>
+            <class name="Tests.TestToVerifyCheckout"/>
         </classes>
     </test>
 </suite>
