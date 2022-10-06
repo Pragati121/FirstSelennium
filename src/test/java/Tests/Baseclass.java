@@ -18,8 +18,8 @@ public class Baseclass {
         driver.navigate().to("https://www.saucedemo.com/");
         pageFactory = new PageFactory(driver);
     }
-    @AfterClass
-    public void close(){
-        driver.close();
-    }
+//    @AfterClass
+//    public void close(){
+//        driver.close();
+//    }
 }

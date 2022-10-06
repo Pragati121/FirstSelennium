@@ -16,16 +16,14 @@ public class LoginPage {
 
     By User= By.xpath("//input[contains(@class,'input_error')]");
     By Pwd=By.xpath("//input[contains(@type,'password')]");
-    By Submit=By.xpath("//input[contains(@type,'submit')]");
-
+    By Submit=By.xpath("//input[contains(@class,'submit-button')]");
     public LoginPage(WebDriver driver) {
         this.driver=driver;
     }
     public void  loginpageuser()
     {
-//        driver.findElement(Username).sendKeys("standard_user");
-//        driver.findElement(Password).sendKeys("secret_sauce");
         driver.findElement(Submit).click();
+
     }
     public void MethodExcel() throws IOException {
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(9));
@@ -38,10 +36,11 @@ public class LoginPage {
         }
         XSSFWorkbook wb = new XSSFWorkbook(prop1);
         XSSFSheet sheet = wb.getSheet("Sheet1");
-        String Username = sheet.getRow(1).getCell(0).getStringCellValue();
-        String  Password = sheet.getRow(1).getCell(1).getStringCellValue();
-        driver.findElement(User).sendKeys("Username");
-        driver.findElement(Pwd).sendKeys("Password");
+        String Usern = sheet.getRow(1).getCell(0).getStringCellValue();
+        String  Pass= sheet.getRow(1).getCell(1).getStringCellValue();
+        driver.findElement(User).sendKeys(Usern);
+        driver.findElement(Pwd).sendKeys(Pass);
+
     }
     }
 
